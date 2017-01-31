@@ -9,15 +9,15 @@
     <script type="text/javascript">google.load("jquery", "1.3.2");</script>
     <script>
     $(document).ready(function(){
-        animateDiv();
+        animateDivs();
         
     });
 
     function makeNewPosition(){
     
         // Get viewport dimensions (remove the dimension of the div)
-        var h = $(window).height() - 50;
-        var w = $(window).width() - 50;
+        var h = ($('#container').height()-50) *0.8;
+        var w = ($('#container').width()-50) * 0.8;
     
         var nh = Math.floor(Math.random() * h);
         var nw = Math.floor(Math.random() * w);
@@ -25,16 +25,20 @@
         return [nh,nw];    
     
     }
+        
+    function animateDivs() {
+        $('.movingImage').each(function() {
+            animateDiv($(this));
+        });
+        animateDivs();
+    }
 
-    function animateDiv(){
+    function animateDiv(image){
         var newq = makeNewPosition();
-        var oldq = $('.movingImage').offset();
+        var oldq = image.offset();
         var speed = calcSpeed([oldq.top, oldq.left], newq);
     
-        $('.movingImage').animate({ top: newq[0], left: newq[1] }, speed, function(){
-        animateDiv();        
-        });
-    
+        image.animate({ top: newq[0], left: newq[1] }, speed);      
     };
 
     function calcSpeed(prev, next) {
@@ -55,8 +59,8 @@
     <body>
         <div id="navbar">
             <ul>
-                <li><a href="/index.html">Home</a></li>
-                <li><a class ="active" href="/projects.html">Projects</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a class ="active" href="projects.html">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -64,8 +68,10 @@
             <ul>
                 <li>
                     <div class = "movingImage">
+                    <div class = "name"><h>Link1</h>
+                    </div>
                     <a href="image-gallery.html">
-                    <img src="images/buildings.jpg" alt="Buildings">
+                    <img src="images/sketch1.jpg" alt="Buildings">
                     </a>
                 </div>
                 </li>

@@ -92,37 +92,67 @@ body {
 #container {
     float: right;
     box-shadow: 20px -5px 50px rgba(0,0,0,0.3);
-    margin-top: 10%;
-    margin-left: 5%;
-    margin-right: 5%;
-    padding: 10px;
-    height: auto;
-    align-content: center;
-    max-width: 70%;
-    max-height: 70%;
+    margin-top: 10pc;
+    margin-left: 25%;
+    margin-right: 2%;
+    margin-bottom: 20px;
+    max-width: 45%;
+    width : auto;
+    max-height: 50pc;
     overflow: hidden;
     border-radius: 25px;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
-#container img {
+/*#container img {
+    //height : auto;
     width: auto;
-    height : auto;
-    max-height: 95%;
-    max-width: 100%;
+    max-height: pc;
+    max-width : 100%;
+    align-self: center;
     align-content: center;
     border-radius: 25px;
+}*/
+
+
+.imageHolder {
+    max-height: 40pc;
+    width : inherit;
+    border-radius: 25px;
+    overflow: hidden;
+    padding : 5px;
+    margin: 5px;
+    background-color: black;
+    box-shadow: 20px -5px 50px rgba(0,0,0,0.3);
 }
 
-#container p {
+.imageHolder img {
+    position: relative;
+    bottom : 5px;
+    right: -5px;
+    border-radius: inherit;
+    max-height: inherit;
+    max-width: 45pc;
+    margin: 5px;
+    overflow: hidden;
+}
+
+.textHolder {
+    margin-top: 10px;
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.01);
+}
+
+.textHolder p {
+    position: relative;
     color: white;
     font : "Arial Bold";
     font-size: 24px;
-    margin-bottom: -5px;
-    margin-top: -2px;
-    text-align: center;  
+    padding-bottom: 5px;
+    margin-top: 2px;
+    text-align: center; 
 }
-
 
 .hidden {
     display : none;
@@ -132,9 +162,21 @@ body {
     display: block;
 }
 
-.title {
-    page-break-inside: always;
-    height : 50px;
-    width: 50px;
-    background-color: aqua;
+.article {
+    float : left;
+    margin-left: 25%;
+    margin-top: 5%;
+    position: absolute;
+    max-width : 35pc;
+}
+
+.article h1 {
+    text-align: center;
+}
+
+.article p {
+    font: "Arial Bold";
+    font-size: 30px;
+    display: flex;
+    justify-content: space-between;
 }
